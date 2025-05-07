@@ -1,26 +1,29 @@
-@extends ('layouts.app')
+@extends('layouts.app')
 
 @section('content')
-    <div style="padding: 20px; max-width: 400px; margin: auto;">
-        <h2>Вхід</h2>
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-            <div>
-                <label>Email:</label>
-                <input type="email" name="email" value="{{ old('email') }}" required autofocus>
-            </div>
+<div class="container mt-5" style="max-width: 500px;">
+    <div class="card shadow">
+        <div class="card-header bg-secondary text-white text-center">
+            <h4>Вхід до системи</h4>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" required autofocus>
+                </div>
 
-            <div>
-                <label>Пароль:</label>
-                <input type="password" name="password" required>
-            </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Пароль</label>
+                    <input type="password" name="password" class="form-control" required>
+                </div>
 
-            @error('email')
-                <p style="color:red;">{{ $message }}</p>
-            @enderror
-
-            <button type="submit">Увійти</button>
-        </form>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Увійти</button>
+                </div>
+            </form>
+        </div>
     </div>
-
+</div>
 @endsection
