@@ -9,7 +9,7 @@
 </head>
 <body class="bg-light d-flex justify-content-center align-items-center" style="height: 100vh;">
     <div class="card shadow p-4" style="min-width: 350px;">
-        <h4 class="mb-3 text-center">Вхід до системи</h4>
+        <h4 class="mb-3 text-center">Вхід до QA CRM</h4>
 
         @if(session('error'))
             <div class="alert alert-danger">
