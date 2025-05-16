@@ -26,6 +26,10 @@
             <label for="category_a" class="form-label">Категорія A</label>
             <input type="number" class="form-control" id="category_a" name="category_a" min="0" max="10" required>
         </div>
+        <div class="mb-3">
+            <label for="total_score" class="form-label">Загальний бал</label>
+            <input type="number" class="form-control" id="total_score" name="total_score" min="0" max="30" required>
+        </div>
 
         <button type="submit" class="btn btn-primary">Зберегти карту</button>
     </form>

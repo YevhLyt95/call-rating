@@ -1,29 +1,40 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
 
-@section('content')
-<div class="container mt-5" style="max-width: 500px;">
-    <div class="card shadow">
-        <div class="card-header bg-secondary text-white text-center">
-            <h4>Вхід до системи</h4>
-        </div>
-        <div class="card-body">
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control" required autofocus>
-                </div>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="card shadow p-4" style="min-width: 350px;">
+        <h4 class="mb-3 text-center">Вхід до системи</h4>
 
-                <div class="mb-3">
-                    <label for="password" class="form-label">Пароль</label>
-                    <input type="password" name="password" class="form-control" required>
-                </div>
+        @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
 
-                <div class="d-grid">
-                    <button type="submit" class="btn btn-primary">Увійти</button>
-                </div>
-            </form>
-        </div>
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email адреса</label>
+                <input type="email" name="email" id="email" class="form-control" required autofocus>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Пароль</label>
+                <input type="password" name="password" id="password" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Увійти</button>
+        </form>
     </div>
-</div>
-@endsection
+
+    <!-- Bootstrap JS (не обов'язково для логіну, але може знадобитися пізніше) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

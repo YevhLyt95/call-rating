@@ -18,7 +18,7 @@ class CardController extends Controller{
             'call_id' => 'required|string|max:255',
             'sip' => 'required|integer',
             'editor_id' => 'required|integer',
-            'category_a' => 'required|integer|min:0|max:10',
+            'total_score' => 'required|integer|min:0|max:30',
             'comment' => 'nullable|string',
             'created_at' => 'nullable|date',
         ]);
