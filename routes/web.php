@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyCallsController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CardController;
 
 Route::get('/', function () {
     return view('index');
@@ -16,3 +17,5 @@ Route::get('/cards/{id}', [\App\Http\Controllers\CardController::class, 'show'])
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/cards/create', [CardController::class, 'create'])->name('cards.create');
+Route::post('/cards/store', [CardController::class, 'store'])->name('cards.store');
