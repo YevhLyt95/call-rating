@@ -1,4 +1,4 @@
-<header style="background: #ffffff; padding: :10px;">
+<header style="background: #ffffff; padding:10px;">
     <nav class="container d-flex justify-content-between align-items-center">
         
         <a href="{{ route('index') }}">QA crm</a>

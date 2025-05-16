@@ -18,4 +18,4 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/cards/create', [CardController::class, 'create'])->name('cards.create');
-Route::post('/cards/store', [CardController::class, 'store'])->name('cards.store');
+Route::post('/cards', [CardController::class, 'store'])->name('cards.store');
